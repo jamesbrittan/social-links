@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Damion|Ubuntu");
+* {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.error {
+  color: cyan !important;
+}
