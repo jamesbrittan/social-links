@@ -57,8 +57,15 @@ function App() {
 
   return (
     <Container className="App">
+      <H1>Social URL Formatter</H1>
+      {twitter && (
+        <Output>
+          <p>
+            <strong>Twitter:</strong> <a href={twitter} target="_blank" rel="noopener noreferrer">{twitter}</a>
+          </p>
+        </Output>
+      )}
       <Form className="form" onSubmit={handleSubmit}>
-        <H1>Social URL Formatter</H1>
         <Label htmlFor="text">
           <strong>Text:</strong>
           <TextArea
@@ -86,14 +93,6 @@ function App() {
         </Label>
         <Button type="submit">Format</Button>
       </Form>
-
-      {twitter && (
-        <Output>
-          <p>
-            <strong>Twitter:</strong> {twitter}
-          </p>
-        </Output>
-      )}
     </Container>
   );
 }

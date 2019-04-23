@@ -6,7 +6,8 @@ const variables = {
     blue: "#96bbbb",
     red: "#f64740",
     white: "#fafafa",
-    pink: "#f7baa1",
+    pink1: "#f7baa1",
+    pink2: "#ff9e99",
   },
   fonts: {
     mono: "'Inconsolata', monospace",
@@ -16,7 +17,7 @@ const variables = {
   padding: "0.8rem",
   marginTop: "1.2rem",
   inputFontSize: "1.2rem",
-  borderRadius: "0.2rem",
+  borderRadius: "0.1rem",
   spacing: {
     "xl": "2.25em",
     "l": "1.5em",
@@ -40,11 +41,9 @@ export const Container = styled.div`
   min-height: 100vh;
   align-items: center;
   font-family: ${variables.fonts.sans};
-  background-color: rgba(255,158,153,1);
-  background: @include filter-gradient(#ff9e99, #fb958b, horizontal);
-  background: @include background-image(linear-gradient(left bottom, rgba(255,158,153,1) 0%, rgba(251,159,164,1) 18%, rgba(247,185,161,1) 51%, rgba(247,166,131,1) 82%, rgba(251,149,139,1) 100%));
+  background-color: ${variables.colours.pink1};
+  background-image: linear-gradient(to bottom right, ${variables.colours.pink1}, ${variables.colours.pink2});
 `
-
 
 export const Form = styled.form`
   display: flex;
@@ -55,17 +54,16 @@ export const Form = styled.form`
   max-width: 960px;
   margin: 0 auto;
   padding: ${variables.spacing.m};
-  border-radius: ${variables.borderRadius};
 
 `
 
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
+  /* width: 80%; */
   margin-bottom: ${variables.spacing.l};
   color: ${variables.colours.white};
-
 `
 
 export const Input = styled.input`
@@ -83,6 +81,7 @@ export const TextArea = styled.textarea`
   border-radius: ${variables.borderRadius};
   resize: none;
   font-size: ${variables.inputFontSize};
+  border: none;
 `
 
 export const Button = styled.button`
@@ -95,10 +94,12 @@ export const Button = styled.button`
   color: white;
   border: 2px solid white;
   cursor: pointer;
+  font-size: ${variables.inputFontSize};
 
   &:hover {
     background: white;
-    color: ${variables.colours.pink};
+    font-weight: bold;
+    color: ${variables.colours.pink2};
     transition: 0.4s;
   }
 
@@ -106,6 +107,10 @@ export const Button = styled.button`
 
 export const Output = styled.div`
   padding: ${variables.spacing.s};
-  border-radius: 0.4rem;
+  border-radius: ${variables.borderRadius};
   background: ${variables.colours.white};
+  width: 85%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: ${variables.spacing.m};
 `
